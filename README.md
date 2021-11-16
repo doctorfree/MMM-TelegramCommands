@@ -111,6 +111,10 @@ To restart MagicMirror, issue the Telegram command:
 /mirror restart
 ```
 
+See the [MirrorCommandLine project](https://gitlab.com/doctorfree/MirrorCommandLine)
+for an in-depth review of all the various commands that can be issued using the
+`/mirror` command.
+
 The Telegram commands `/myreboot` and `/myshutdown` execute the commands,
 respectively, `/usr/local/bin/reboot` and `/usr/local/bin/shutdown`. These
 custom reboot and shutdown commands can be used to perform actions prior

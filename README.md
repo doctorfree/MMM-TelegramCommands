@@ -25,6 +25,12 @@ It works in conjunction with the
 ## Table of contents
 
 1. [Overview](#overview)
+1. [Install](#install)
+1. [Config](#config)
+    1. [TelegramBot integration](#telegrambot-integration)
+    1. [TelegramBot installation](#telegrambot-installation)
+    1. [Telegram usage](#telegram-usage)
+1. [Author](#author)
 
 ## Overview
 
@@ -57,7 +63,7 @@ You can control MMM-TelegramCommands using the Telegram app by installing the
 [MMM-TelegramBot](https://github.com/bugsounet/MMM-TelegramBot)
 module and adding MMM-TelegramBot configuration to your scenes.
 
-#### TelegramBot installation
+### TelegramBot installation
 Follow the instructions at the
 [4th Party Modules Wiki](http://wiki.bugsounet.fr/en/MMM-TelegramBot)
 to create a Telegram Bot, install MMM-TelegramBot, and configure your
@@ -67,7 +73,7 @@ MagicMirror `config.js` to enable Telegram commands.
 with MMM-TelegramCommands are already created by the module. You only need to follow the
 [4th Party Modules Wiki Installation instructions](http://wiki.bugsounet.fr/en/MMM-TelegramBot/Installation).
 
-#### Telegram usage
+### Telegram usage
 Once installed and configured, you can control your MagicMirror display
 by sending messages in the Telegram app to your previously created Telegram Bot.
 The supported commands are as follows:
@@ -81,5 +87,5 @@ For example, to activate the MagicMirror config file
 /mmconf sample
 ```
 
-### Author
+## Author
 - Ronald Joe Record (ronaldrecord@gmail.com)

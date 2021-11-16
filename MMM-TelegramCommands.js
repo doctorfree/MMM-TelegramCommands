@@ -16,6 +16,15 @@ Module.register('MMM-TelegramCommands', {
   getCommands: function(commander) {
     commander.add(
       {
+        command: 'mirror',
+        description: "Executes MagicMirror `mirror` command\nTry `/mirror status`.",
+        callback: 'command_mirror',
+        args_pattern : ["/([0-9a-zA-Z-_]+)/"],
+        args_mapping : ["mirrorargs"]
+      }
+    )
+    commander.add(
+      {
         command: 'mmconf',
         description: "Activates specified MagicMirror config\nTry `/mmconf default`.",
         callback: 'command_mmconf',
@@ -23,8 +32,39 @@ Module.register('MMM-TelegramCommands', {
         args_mapping : ["confname"]
       }
     )
+    commander.add(
+      {
+        command: 'myreboot',
+        description: "Executes custom MagicMirror `reboot` command",
+        callback: 'command_myreboot'
+      }
+    )
+    commander.add(
+      {
+        command: 'myshutdown',
+        description: "Executes custom MagicMirror `shutdown` command",
+        callback: 'command_myshutdown'
+      }
+    )
   },
 
+  // Callback for /mirror Telegram command
+  command_mirror: function(command, handler) {
+    if (handler.args['mirrorargs'][0]) {
+      var exec = "mirror -D " + handler.args['mirrorargs'][0]
+    } else {
+      var exec = "mirror -D status"
+    }
+    handler.reply("TEXT", "Executing command: " + exec)
+    var sessionId = Date.now() + "_" + this.commonSession.size
+    if (exec) {
+      this.commonSession.set(sessionId, handler)
+      this.sendSocketNotification("SHELL", {
+        session: sessionId,
+        exec: exec
+      })
+    }
+  },
   // Callback for /mmconf Telegram command
   command_mmconf: function(command, handler) {
     if (handler.args['confname'][0]) {
@@ -32,6 +72,32 @@ Module.register('MMM-TelegramCommands', {
     } else {
       var exec = "mirror status"
     }
+    handler.reply("TEXT", "Executing command: " + exec)
+    var sessionId = Date.now() + "_" + this.commonSession.size
+    if (exec) {
+      this.commonSession.set(sessionId, handler)
+      this.sendSocketNotification("SHELL", {
+        session: sessionId,
+        exec: exec
+      })
+    }
+  },
+  // Callback for /myreboot Telegram command
+  command_myreboot: function(command, handler) {
+    var exec = "/usr/local/bin/reboot"
+    handler.reply("TEXT", "Executing command: " + exec)
+    var sessionId = Date.now() + "_" + this.commonSession.size
+    if (exec) {
+      this.commonSession.set(sessionId, handler)
+      this.sendSocketNotification("SHELL", {
+        session: sessionId,
+        exec: exec
+      })
+    }
+  },
+  // Callback for /myshutdown Telegram command
+  command_myshutdown: function(command, handler) {
+    var exec = "/usr/local/bin/shutdown"
     handler.reply("TEXT", "Executing command: " + exec)
     var sessionId = Date.now() + "_" + this.commonSession.size
     if (exec) {

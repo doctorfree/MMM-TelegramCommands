@@ -25,10 +25,10 @@ It works in conjunction with the
 ## Table of contents
 
 1. [Install](#install)
-1. [Config](#config)
+1. [Configuration](#configuration)
     1. [TelegramBot integration](#telegrambot-integration)
     1. [TelegramBot installation](#telegrambot-installation)
-    1. [Telegram usage](#telegram-usage)
+1. [TelegramCommands usage](#telegramcommands-usage)
 1. [Author](#author)
 
 ## Install
@@ -39,7 +39,7 @@ cd MMM-TelegramCommands
 npm install
 ```
 
-## Config
+## Configuration
 To enable the Telegram commands supported by the MMM-TelegramCommands module,
 after installing the module add the following to the MagicMirror `config.js`
 modules array:
@@ -69,12 +69,15 @@ MagicMirror `config.js` to enable Telegram commands.
 with MMM-TelegramCommands are already created by the module. You only need to follow the
 [4th Party Modules Wiki Installation instructions](http://wiki.bugsounet.fr/en/MMM-TelegramBot/Installation).
 
-### Telegram usage
+### TelegramCommands usage
 Once installed and configured, you can control your MagicMirror display
 by sending messages in the Telegram app to your previously created Telegram Bot.
 The supported commands are as follows:
 
+- /mirror &lt;options&gt;
 - /mmconf &lt;configname&gt;
+- /myreboot
+- /myshutdown
 
 For example, to activate the MagicMirror config file
 `MagicMirror/config/config-sample.js`, issue the Telegram command:
@@ -82,6 +85,17 @@ For example, to activate the MagicMirror config file
 ```
 /mmconf sample
 ```
+
+To restart MagicMirror, issue the Telegram command:
+
+```
+/mirror restart
+```
+
+The Telegram commands `/myreboot` and `/myshutdown` execute the commands,
+respectively, `/usr/local/bin/reboot` and `/usr/local/bin/shutdown`. These
+custom reboot and shutdown commands can be used to perform actions prior
+to rebooting or shutting down the system on which MagicMirror is installed.
 
 ## Author
 - Ronald Joe Record (ronaldrecord@gmail.com)

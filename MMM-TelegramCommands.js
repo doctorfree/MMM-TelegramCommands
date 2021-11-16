@@ -1,5 +1,9 @@
 Module.register('MMM-TelegramCommands', {
   defaults: {
+    mirror: true,
+    mmconf: true,
+    myreboot: true,
+    myshutdown: true
   },
 
   getTranslations: function() {
@@ -14,38 +18,46 @@ Module.register('MMM-TelegramCommands', {
   },
 
   getCommands: function(commander) {
-    commander.add(
-      {
-        command: 'mirror',
-        description: "Executes MagicMirror `mirror` command\nTry `/mirror status`.",
-        callback: 'command_mirror',
-        args_pattern : ["/([0-9a-zA-Z-_]+)/"],
-        args_mapping : ["mirrorargs"]
-      }
-    )
-    commander.add(
-      {
-        command: 'mmconf',
-        description: "Activates specified MagicMirror config\nTry `/mmconf default`.",
-        callback: 'command_mmconf',
-        args_pattern : ["/([0-9a-zA-Z-_]+)/"],
-        args_mapping : ["confname"]
-      }
-    )
-    commander.add(
-      {
-        command: 'myreboot',
-        description: "Executes custom MagicMirror `reboot` command",
-        callback: 'command_myreboot'
-      }
-    )
-    commander.add(
-      {
-        command: 'myshutdown',
-        description: "Executes custom MagicMirror `shutdown` command",
-        callback: 'command_myshutdown'
-      }
-    )
+    if (this.config.mirror) {
+      commander.add(
+        {
+          command: 'mirror',
+          description: "Executes MagicMirror `mirror` command\nTry `/mirror status`.",
+          callback: 'command_mirror',
+          args_pattern : ["/([0-9a-zA-Z-_]+)/"],
+          args_mapping : ["mirrorargs"]
+        }
+      )
+    }
+    if (this.config.mirror) {
+      commander.add(
+        {
+          command: 'mmconf',
+          description: "Activates specified MagicMirror config\nTry `/mmconf default`.",
+          callback: 'command_mmconf',
+          args_pattern : ["/([0-9a-zA-Z-_]+)/"],
+          args_mapping : ["confname"]
+        }
+      )
+    }
+    if (this.config.mirror) {
+      commander.add(
+        {
+          command: 'myreboot',
+          description: "Executes custom MagicMirror `reboot` command",
+          callback: 'command_myreboot'
+        }
+      )
+    }
+    if (this.config.mirror) {
+      commander.add(
+        {
+          command: 'myshutdown',
+          description: "Executes custom MagicMirror `shutdown` command",
+          callback: 'command_myshutdown'
+        }
+      )
+    }
   },
 
   // Callback for /mirror Telegram command

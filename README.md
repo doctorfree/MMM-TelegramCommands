@@ -54,6 +54,25 @@ You can find a [simple example config file](examples/config-simple.js)
 in the `examples` directory as well as a
 [more complex example](examples/config-commands.js).
 
+Each of the Telegram commands added by MMM-TelegramCommands can be disabled
+in the `config.js` module entry. For example, to disable both the `myreboot`
+and `myshutdown` Telegram commands, set those to `false` in `config.js`:
+
+```javascript
+{
+  module: "MMM-TelegramCommands",
+  config: {
+    mirror: true,
+    mmconf: true,
+    myreboot: false,
+    myshutdown: false
+  }
+}
+```
+
+All MMM-TelegramCommands are enabled by default so it is only necessary to add
+the minimal module entry above to enable the commands.
+
 ### TelegramBot integration
 You can control MMM-TelegramCommands using the Telegram app by installing the
 [MMM-TelegramBot](https://github.com/bugsounet/MMM-TelegramBot)

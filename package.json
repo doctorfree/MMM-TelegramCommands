@@ -23,23 +23,6 @@
   },
   "homepage": "https://gitlab.com/doctorfree/MMM-TelegramCommands#readme",
   "dependencies": {
-    "body-parser": "^1.19.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint-plugin-html": "^6.2.0",
-    "markdown-toc": "^1.2.0",
-    "prettier-standard": "^13.0.6",
-    "standard": "^16.0.4"
-  },
-  "standard": {
-    "plugins": [
-      "html"
-    ],
-    "parser": "babel-eslint",
-    "globals": [
-      "Module",
-      "MM"
-    ]
+    "moment": "^2.18.1"
   }
 }

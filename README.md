@@ -24,16 +24,12 @@ It works in conjunction with the
 
 ## Table of contents
 
-1. [Overview](#overview)
 1. [Install](#install)
 1. [Config](#config)
     1. [TelegramBot integration](#telegrambot-integration)
     1. [TelegramBot installation](#telegrambot-installation)
     1. [Telegram usage](#telegram-usage)
 1. [Author](#author)
-
-## Overview
-
 
 ## Install
 ```sh

@@ -3,7 +3,8 @@ Module.register('MMM-TelegramCommands', {
     mirror: true,
     mmconf: true,
     myreboot: true,
-    myshutdown: true
+    myshutdown: true,
+    volume: true
   },
 
   getTranslations: function() {
@@ -29,7 +30,7 @@ Module.register('MMM-TelegramCommands', {
         }
       )
     }
-    if (this.config.mirror) {
+    if (this.config.mmconf) {
       commander.add(
         {
           command: 'mmconf',
@@ -40,7 +41,7 @@ Module.register('MMM-TelegramCommands', {
         }
       )
     }
-    if (this.config.mirror) {
+    if (this.config.myreboot) {
       commander.add(
         {
           command: 'myreboot',
@@ -49,12 +50,23 @@ Module.register('MMM-TelegramCommands', {
         }
       )
     }
-    if (this.config.mirror) {
+    if (this.config.myshutdown) {
       commander.add(
         {
           command: 'myshutdown',
           description: "Executes custom MagicMirror `shutdown` command",
           callback: 'command_myshutdown'
+        }
+      )
+    }
+    if (this.config.volume) {
+      commander.add(
+        {
+          command: 'volume',
+          description: "Sets/Gets MagicMirror volume\nTry `/volume 50`.",
+          callback: 'command_volume',
+          args_pattern : ["/([0-9a-zA-Z-_]+)/"],
+          args_mapping : ["volumeargs"]
         }
       )
     }
@@ -80,9 +92,9 @@ Module.register('MMM-TelegramCommands', {
   // Callback for /mmconf Telegram command
   command_mmconf: function(command, handler) {
     if (handler.args['confname'][0]) {
-      var exec = "mirror " + handler.args['confname'][0]
+      var exec = "mirror -D " + handler.args['confname'][0]
     } else {
-      var exec = "mirror status"
+      var exec = "mirror -D status"
     }
     handler.reply("TEXT", "Executing command: " + exec)
     var sessionId = Date.now() + "_" + this.commonSession.size
@@ -110,6 +122,23 @@ Module.register('MMM-TelegramCommands', {
   // Callback for /myshutdown Telegram command
   command_myshutdown: function(command, handler) {
     var exec = "/usr/local/bin/shutdown"
+    handler.reply("TEXT", "Executing command: " + exec)
+    var sessionId = Date.now() + "_" + this.commonSession.size
+    if (exec) {
+      this.commonSession.set(sessionId, handler)
+      this.sendSocketNotification("SHELL", {
+        session: sessionId,
+        exec: exec
+      })
+    }
+  },
+  // Callback for /volume Telegram command
+  command_volume: function(command, handler) {
+    if (handler.args['volumeargs'][0]) {
+      var exec = "mirror -D vol " + handler.args['volumeargs'][0]
+    } else {
+      var exec = "mirror -D vol get"
+    }
     handler.reply("TEXT", "Executing command: " + exec)
     var sessionId = Date.now() + "_" + this.commonSession.size
     if (exec) {

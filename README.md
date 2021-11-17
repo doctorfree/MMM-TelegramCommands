@@ -25,7 +25,7 @@ It works in conjunction with the
 ## Table of contents
 
 1. [Requirements](#requirements)
-1. [Install](#install)
+1. [Installation](#installation)
     1. [MirrorCommandLine](#mirrorcommandline)
     1. [TelegramBot](#telegrambot)
 1. [Configuration](#configuration)
@@ -40,7 +40,7 @@ MMM-TelegramCommands requires the installation and configuration of the
 and the [MirrorCommandLine](https://gitlab.com/doctorfree/MirrorCommandLine) 
 suite of command line utilites for the MagicMirror.
 
-## Install
+## Installation
 
 To install the MMM-TelegramCommands module:
 
@@ -153,12 +153,11 @@ The Telegram command `/volume` can be used to set or retrieve the volume level
 on the MagicMirror. Supported `/volume` commands include:
 
 - /volume &lt;percent&gt;
+- /volume get
 - /volume mute
 - /volume unmute
-- /volume
 
-Where &lt;percent&gt; is an integer between 0 and 100. If no argument is given
-to the `/volume` command then the current volume level is returned.
+Where &lt;percent&gt; is an integer between 0 and 100.
 
 ## Author
 - Ronald Joe Record (ronaldrecord@gmail.com)

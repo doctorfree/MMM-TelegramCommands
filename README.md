@@ -24,20 +24,47 @@ It works in conjunction with the
 
 ## Table of contents
 
+1. [Requirements](#requirements)
 1. [Install](#install)
+    1. [MirrorCommandLine](#mirrorcommandline)
+    1. [TelegramBot](#telegrambot)
 1. [Configuration](#configuration)
     1. [TelegramBot integration](#telegrambot-integration)
     1. [TelegramBot installation](#telegrambot-installation)
 1. [TelegramCommands usage](#telegramcommands-usage)
 1. [Author](#author)
 
+## Requirements
+MMM-TelegramCommands requires the installation and configuration of the
+[MMM-TelegramBot](https://github.com/bugsounet/MMM-TelegramBot) module
+and the [MirrorCommandLine](https://gitlab.com/doctorfree/MirrorCommandLine) 
+suite of command line utilites for the MagicMirror.
+
 ## Install
-```sh
+
+To install the MMM-TelegramCommands module:
+
+```bash
 cd ~/MagicMirror/modules
 git clone https://gitlab.com/doctorfree/MMM-TelegramCommands
 cd MMM-TelegramCommands
 npm install
 ```
+
+### MirrorCommandLine
+
+To install the MirrorCommandLine package on your MagicMirror,
+[Download the latest Debian package format release](https://gitlab.com/doctorfree/MirrorCommandLine/-/releases)
+
+Install the base MirrorCommandLine package by executing the command
+
+```bash
+sudo apt install MirrorCommandLine_<version>.deb
+```
+
+### TelegramBot
+
+See below for instructions on [TelegramBot installation](#telegrambot-installation).
 
 ## Configuration
 To enable the Telegram commands supported by the MMM-TelegramCommands module,
@@ -77,7 +104,7 @@ the minimal module entry above to enable the commands.
 ### TelegramBot integration
 You can control MMM-TelegramCommands using the Telegram app by installing the
 [MMM-TelegramBot](https://github.com/bugsounet/MMM-TelegramBot)
-module and adding MMM-TelegramBot configuration to your scenes.
+module and adding MMM-TelegramBot configuration to your `config.js`.
 
 ### TelegramBot installation
 Follow the instructions at the

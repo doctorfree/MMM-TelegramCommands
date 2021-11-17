@@ -137,7 +137,7 @@ Module.register('MMM-TelegramCommands', {
     if (handler.args['volumeargs'][0]) {
       var exec = "mirror -D vol " + handler.args['volumeargs'][0]
     } else {
-      var exec = "mirror -D vol get"
+      var exec = "vol"
     }
     handler.reply("TEXT", "Executing command: " + exec)
     var sessionId = Date.now() + "_" + this.commonSession.size

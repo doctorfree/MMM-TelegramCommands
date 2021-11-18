@@ -91,10 +91,12 @@ and `myshutdown` Telegram commands, set those to `false` in `config.js`:
   config: {
     mirror: true,
     mmconf: true,
+    mmvol: true,
     myreboot: false,
     myshutdown: false,
     myscreenshot: true,
-    mmvol: true
+    getb: true,
+    setb: true
   }
 }
 ```
@@ -124,10 +126,12 @@ The supported commands are as follows:
 
 - /mirror &lt;options&gt;
 - /mmconf &lt;configname&gt;
+- /mmvol &lt;0-100&gt;
 - /myreboot
 - /myshutdown
 - /myscreenshot
-- /mmvol &lt;0-100&gt;
+- /getb
+- /setb &lt;0-200&gt;
 
 For example, to activate the MagicMirror config file
 `MagicMirror/config/config-sample.js`, issue the Telegram command:
@@ -163,6 +167,9 @@ Where &lt;percent&gt; is an integer between 0 and 100.
 
 The Telegram command `/myscreenshot` triggers a screenshot of the MagicMirror
 and saves the screenshot in `$HOME/Pictures/ScreenShots/`
+
+The Telegram commands `/getb` and `/setb` get and set, respectively, the MagicMirror
+screen brightness level. The brightness levels are 0-200, inclusive.
 
 ## Author
 - Ronald Joe Record (ronaldrecord@gmail.com)

@@ -2,10 +2,12 @@ Module.register('MMM-TelegramCommands', {
   defaults: {
     mirror: true,
     mmconf: true,
+    mmvol: true,
     myreboot: true,
     myshutdown: true,
     myscreenshot: true,
-    mmvol: true
+    getb: true,
+    setb: true
   },
 
   getTranslations: function() {
@@ -77,6 +79,26 @@ Module.register('MMM-TelegramCommands', {
           callback: 'command_volume',
           args_pattern : ["/([0-9a-zA-Z-_]+)/"],
           args_mapping : ["volumeargs"]
+        }
+      )
+    }
+    if (this.config.getb) {
+      commander.add(
+        {
+          command: 'getb',
+          description: "Get the MagicMirror screen brightness level setting",
+          callback: 'command_getb',
+        }
+      )
+    }
+    if (this.config.setb) {
+      commander.add(
+        {
+          command: 'setb',
+          description: "Set the MagicMirror screen brightness level (0-200)",
+          callback: 'command_setb',
+          args_pattern : ["/([0-9]+)/"],
+          args_mapping : ["brightness"]
         }
       )
     }
@@ -161,6 +183,36 @@ Module.register('MMM-TelegramCommands', {
       var exec = "mirror -D vol " + handler.args['volumeargs'][0]
     } else {
       var exec = "vol"
+    }
+    handler.reply("TEXT", "Executing command: " + exec)
+    var sessionId = Date.now() + "_" + this.commonSession.size
+    if (exec) {
+      this.commonSession.set(sessionId, handler)
+      this.sendSocketNotification("SHELL", {
+        session: sessionId,
+        exec: exec
+      })
+    }
+  },
+  // Callback for /getb Telegram command
+  command_getb: function(command, handler) {
+    var exec = "mirror -D getb"
+    handler.reply("TEXT", "Executing command: " + exec)
+    var sessionId = Date.now() + "_" + this.commonSession.size
+    if (exec) {
+      this.commonSession.set(sessionId, handler)
+      this.sendSocketNotification("SHELL", {
+        session: sessionId,
+        exec: exec
+      })
+    }
+  },
+  // Callback for /setb Telegram command
+  command_setb: function(command, handler) {
+    if (handler.args['brightness'][0]) {
+      var exec = "mirror -D setb " + handler.args['brightness'][0]
+    } else {
+      var exec = "mirror -D setb 100"
     }
     handler.reply("TEXT", "Executing command: " + exec)
     var sessionId = Date.now() + "_" + this.commonSession.size

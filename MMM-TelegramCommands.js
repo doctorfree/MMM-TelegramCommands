@@ -7,7 +7,8 @@ Module.register('MMM-TelegramCommands', {
     myshutdown: true,
     myscreenshot: true,
     getb: true,
-    setb: true
+    setb: true,
+    rotate: true
   },
 
   getTranslations: function() {
@@ -102,6 +103,17 @@ Module.register('MMM-TelegramCommands', {
         }
       )
     }
+    if (this.config.rotate) {
+      commander.add(
+        {
+          command: 'rotate',
+          description: "Rotate the MagicMirror screen\nTry `/rotate <right|left|normal|inverted>`",
+          callback: 'command_rotate',
+          args_pattern : ["/([a-z]+)/"],
+          args_mapping : ["rotation"]
+        }
+      )
+    }
   },
 
   // Callback for /mirror Telegram command
@@ -177,7 +189,7 @@ Module.register('MMM-TelegramCommands', {
       })
     }
   },
-  // Callback for /volume Telegram command
+  // Callback for /mmvol Telegram command
   command_volume: function(command, handler) {
     if (handler.args['volumeargs'][0]) {
       var exec = "mirror -D vol " + handler.args['volumeargs'][0]
@@ -213,6 +225,23 @@ Module.register('MMM-TelegramCommands', {
       var exec = "mirror -D setb " + handler.args['brightness'][0]
     } else {
       var exec = "mirror -D setb 100"
+    }
+    handler.reply("TEXT", "Executing command: " + exec)
+    var sessionId = Date.now() + "_" + this.commonSession.size
+    if (exec) {
+      this.commonSession.set(sessionId, handler)
+      this.sendSocketNotification("SHELL", {
+        session: sessionId,
+        exec: exec
+      })
+    }
+  },
+  // Callback for /rotate Telegram command
+  command_rotate: function(command, handler) {
+    if (handler.args['rotation'][0]) {
+      var exec = "mirror -D rotate " + handler.args['rotation'][0]
+    } else {
+      var exec = "mirror -D rotate normal"
     }
     handler.reply("TEXT", "Executing command: " + exec)
     var sessionId = Date.now() + "_" + this.commonSession.size

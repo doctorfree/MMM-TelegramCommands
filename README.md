@@ -96,7 +96,8 @@ and `myshutdown` Telegram commands, set those to `false` in `config.js`:
     myshutdown: false,
     myscreenshot: true,
     getb: true,
-    setb: true
+    setb: true,
+    rotate: true
   }
 }
 ```
@@ -132,6 +133,7 @@ The supported commands are as follows:
 - /myscreenshot
 - /getb
 - /setb &lt;0-200&gt;
+- /rotate &lt;rotation&gt;
 
 For example, to activate the MagicMirror config file
 `MagicMirror/config/config-sample.js`, issue the Telegram command:
@@ -170,6 +172,14 @@ and saves the screenshot in `$HOME/Pictures/ScreenShots/`
 
 The Telegram commands `/getb` and `/setb` get and set, respectively, the MagicMirror
 screen brightness level. The brightness levels are 0-200, inclusive.
+
+The Telegram command `/rotate` can be used to rotate the MagicMirror display.
+Supported `/rotate` commands:
+
+- /rotate right
+- /rotate left
+- /rotate normal
+- /rotate inverted
 
 ## Author
 - Ronald Joe Record (ronaldrecord@gmail.com)

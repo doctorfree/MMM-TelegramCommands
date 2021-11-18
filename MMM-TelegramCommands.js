@@ -144,7 +144,7 @@ Module.register('MMM-TelegramCommands', {
   },
   // Callback for /myscreenshot Telegram command
   command_myscreenshot: function(command, handler) {
-    var exec = "mirror -D -z"
+    var exec = "mirror -D screenshot"
     handler.reply("TEXT", "Executing command: " + exec)
     var sessionId = Date.now() + "_" + this.commonSession.size
     if (exec) {

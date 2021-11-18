@@ -93,7 +93,7 @@ and `myshutdown` Telegram commands, set those to `false` in `config.js`:
     mmconf: true,
     myreboot: false,
     myshutdown: false,
-    volume: true
+    mmvol: true
   }
 }
 ```
@@ -125,7 +125,7 @@ The supported commands are as follows:
 - /mmconf &lt;configname&gt;
 - /myreboot
 - /myshutdown
-- /volume
+- /mmvol &lt;0-100&gt;
 
 For example, to activate the MagicMirror config file
 `MagicMirror/config/config-sample.js`, issue the Telegram command:
@@ -149,13 +149,13 @@ respectively, `/usr/local/bin/reboot` and `/usr/local/bin/shutdown`. These
 custom reboot and shutdown commands can be used to perform actions prior
 to rebooting or shutting down the system on which MagicMirror is installed.
 
-The Telegram command `/volume` can be used to set or retrieve the volume level
-on the MagicMirror. Supported `/volume` commands include:
+The Telegram command `/mmvol` can be used to set or retrieve the volume level
+on the MagicMirror. Supported `/mmvol` commands include:
 
-- /volume &lt;percent&gt;
-- /volume get
-- /volume mute
-- /volume unmute
+- /mmvol &lt;percent&gt;
+- /mmvol get
+- /mmvol mute
+- /mmvol unmute
 
 Where &lt;percent&gt; is an integer between 0 and 100.
 

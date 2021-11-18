@@ -1,4 +1,5 @@
 {
+  "TELCOM_VOLUME_HELP": "Atur kenyaringan perangkat Anda",
   "TELCOM_HELPER_ERROR" : "Terjadi kesalahan. Hubungi admin.",
   "TELCOM_HELPER_NOT_ALLOWED" : "Anda tidak diperkenankan memerintah saya. Hubungi admin.",
   "TELCOM_HELPER_RESTART" : "`MagicMirror` diaktifkan kembali pada :",

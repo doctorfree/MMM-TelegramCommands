@@ -1,4 +1,5 @@
 {
+  "TELCOM_VOLUME_HELP": "Imposta il volume del tuo dispositivo",
   "TELCOM_HELPER_ERROR" : "C'è un'errore. Chiedi al mio padrone.",
   "TELCOM_HELPER_NOT_ALLOWED" : "Non sei autorizzato a mandarmi comandi. Chiedi al mio padrone.",
   "TELCOM_HELPER_RESTART" : "`MagicMirror` è partito il :",

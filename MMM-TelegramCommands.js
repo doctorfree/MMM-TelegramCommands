@@ -4,7 +4,7 @@ Module.register('MMM-TelegramCommands', {
     mmconf: true,
     myreboot: true,
     myshutdown: true,
-    volume: true
+    mmvol: true
   },
 
   getTranslations: function() {
@@ -59,11 +59,11 @@ Module.register('MMM-TelegramCommands', {
         }
       )
     }
-    if (this.config.volume) {
+    if (this.config.mmvol) {
       commander.add(
         {
-          command: 'volume',
-          description: "Sets/Gets MagicMirror volume\nTry `/volume 50`.",
+          command: 'mmvol',
+          description: this.translate("TELCOM_VOLUME_HELP"),
           callback: 'command_volume',
           args_pattern : ["/([0-9a-zA-Z-_]+)/"],
           args_mapping : ["volumeargs"]

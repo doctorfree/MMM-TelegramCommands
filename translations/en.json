@@ -1,4 +1,5 @@
 {
+  "TELCOM_VOLUME_HELP": "Sets/Gets MagicMirror volume\nTry `/mmvol 50`",
   "TELCOM_HELPER_ERROR" : "An error is occurred. Ask admin.",
   "TELCOM_HELPER_NOT_ALLOWED" : "You are not allowed to command me. Ask admin.",
   "TELCOM_HELPER_RESTART" : "`MagicMirror` is restarted on :",

@@ -1,5 +1,4 @@
 {
-  "TELCOM_SCREENSHOT": "Take a screenshot of MagicMirror saved in ~/Pictures/ScreenShots/",
   "TELCOM_VOLUME_HELP": "Sets/Gets MagicMirror volume\nTry `/mmvol 50`",
   "TELCOM_HELPER_ERROR" : "An error is occurred. Ask admin.",
   "TELCOM_HELPER_NOT_ALLOWED" : "You are not allowed to command me. Ask admin.",
@@ -51,7 +50,7 @@
   "TELCOM_NOTIFICATION_RESULT": "Notification emitted.",
   "TELCOM_NOTIFICATION_FAIL": "Invalid arguments.",
   "TELCOM_NOTIFICATION_PAYLOAD_FAIL": "Notification payload is not proper.",
-  "TELCOM_SCREENSHOT": "Take a screenshot of MagicMirror.",
+  "TELCOM_SCREENSHOT": "Take a screenshot of MagicMirror saved in ~/Pictures/ScreenShots",
   "TELCOM_SCREENSHOT_NULL": "You didn't set script name for this feature.",
   "TELCOM_SCREENSHOT_RESULT": "Captured : ",
   "TELCOM_SCREENSHOT_RESULT_ERROR": "Screenshot is not captured.:",

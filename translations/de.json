@@ -1,5 +1,4 @@
 {
-  "TELCOM_SCREENSHOT": "Eine Bildschirmaufnahme vom MagicMirror machen.",
   "TELCOM_VOLUME_HELP": "Stellt die Lautstärke der Audioausgabe ein.",
   "TELCOM_HELPER_ERROR" : "Ein Fehler ist aufgetreten. Bitte den Admin kontaktieren.",
   "TELCOM_HELPER_NOT_ALLOWED" : "Du darfst mir keine Befehle schicken. Bitte den Admin kontaktieren.",

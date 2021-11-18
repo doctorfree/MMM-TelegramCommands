@@ -1,4 +1,5 @@
 {
+  "TELCOM_SCREENSHOT": "Prend une capture d'écran de MagicMirror.",
   "TELCOM_VOLUME_HELP": "Défini le volume sonore",
   "TELCOM_HELPER_ERROR" : "Une erreur est survenue. Demandez à un administrateur.",
   "TELCOM_HELPER_NOT_ALLOWED" : "Vous n'êtes pas autorisé à me commander. Demandez à un administrateur.",

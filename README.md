@@ -93,6 +93,7 @@ and `myshutdown` Telegram commands, set those to `false` in `config.js`:
     mmconf: true,
     myreboot: false,
     myshutdown: false,
+    myscreenshot: true,
     mmvol: true
   }
 }
@@ -125,6 +126,7 @@ The supported commands are as follows:
 - /mmconf &lt;configname&gt;
 - /myreboot
 - /myshutdown
+- /myscreenshot
 - /mmvol &lt;0-100&gt;
 
 For example, to activate the MagicMirror config file
@@ -158,6 +160,9 @@ on the MagicMirror. Supported `/mmvol` commands include:
 - /mmvol unmute
 
 Where &lt;percent&gt; is an integer between 0 and 100.
+
+The Telegram command `/myscreenshot` triggers a screenshot of the MagicMirror
+and saves the screenshot in `$HOME/Pictures/ScreenShots/`
 
 ## Author
 - Ronald Joe Record (ronaldrecord@gmail.com)

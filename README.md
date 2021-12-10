@@ -46,7 +46,7 @@ To install the MMM-TelegramCommands module:
 
 ```bash
 cd ~/MagicMirror/modules
-git clone https://gitlab.com/doctorfree/MMM-TelegramCommands
+git clone https://gitlab.com/doctorfree/MMM-TelegramCommands.git
 cd MMM-TelegramCommands
 npm install
 ```

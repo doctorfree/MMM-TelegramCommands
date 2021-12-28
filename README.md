@@ -14,11 +14,11 @@
 
 # MMM-TelegramCommands
 [MagicMirror](https://magicmirror.builders/) is an open source modular smart mirror
-platform. The [MirrorCommandLine](https://gitlab.com/doctorfree/MirrorCommandLine) 
+platform. The [MirrorCommand](https://gitlab.com/doctorfree/MirrorCommand) 
 repository is a suite of command-line tools to manage a MagicMirror.
 
 This repository maintains a MagicMirror module that creates and manages Telegram
-commands to control a MagicMirror via the MirrorCommandLine tools.
+commands to control a MagicMirror via the MirrorCommand tools.
 It works in conjunction with the
 [MMM-TelegramBot](https://github.com/bugsounet/MMM-TelegramBot) module.
 
@@ -26,7 +26,7 @@ It works in conjunction with the
 
 1. [Requirements](#requirements)
 1. [Installation](#installation)
-    1. [MirrorCommandLine](#mirrorcommandline)
+    1. [MirrorCommand](#mirrorcommand)
     1. [TelegramBot](#telegrambot)
 1. [Configuration](#configuration)
     1. [TelegramBot integration](#telegrambot-integration)
@@ -37,7 +37,7 @@ It works in conjunction with the
 ## Requirements
 MMM-TelegramCommands requires the installation and configuration of the
 [MMM-TelegramBot](https://github.com/bugsounet/MMM-TelegramBot) module
-and the [MirrorCommandLine](https://gitlab.com/doctorfree/MirrorCommandLine) 
+and the [MirrorCommand](https://gitlab.com/doctorfree/MirrorCommand) 
 suite of command line utilites for the MagicMirror.
 
 ## Installation
@@ -51,15 +51,15 @@ cd MMM-TelegramCommands
 npm install
 ```
 
-### MirrorCommandLine
+### MirrorCommand
 
-To install the MirrorCommandLine package on your MagicMirror,
-[Download the latest Debian package format release](https://gitlab.com/doctorfree/MirrorCommandLine/-/releases)
+To install the MirrorCommand package on your MagicMirror,
+[Download the latest Debian package format release](https://gitlab.com/doctorfree/MirrorCommand/-/releases)
 
-Install the base MirrorCommandLine package by executing the command
+Install the base MirrorCommand package by executing the command
 
 ```bash
-sudo apt install MirrorCommandLine_<version>.deb
+sudo apt install MirrorCommand<version>.deb
 ```
 
 ### TelegramBot
@@ -148,7 +148,7 @@ To restart MagicMirror, issue the Telegram command:
 /mirror restart
 ```
 
-See the [MirrorCommandLine project](https://gitlab.com/doctorfree/MirrorCommandLine)
+See the [MirrorCommand project](https://gitlab.com/doctorfree/MirrorCommand)
 for an in-depth review of all the various commands that can be issued using the
 `/mirror` command.
 

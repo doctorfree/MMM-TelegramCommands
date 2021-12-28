@@ -1,7 +1,7 @@
 {
   "name": "mmm-telegramcommands",
   "version": "1.0.0",
-  "description": "MagicMirror Module to provide Telegram commands for MirrorCommandLine",
+  "description": "MagicMirror Module to provide Telegram commands for MirrorCommand",
   "main": "MMM-TelegramCommands.js",
   "scripts": {
     "standard": "npx standard"

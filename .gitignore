@@ -104,3 +104,8 @@ dist
 .tern-port
 
 animations.mjs
+# vim files
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist

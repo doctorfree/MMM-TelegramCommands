@@ -152,7 +152,7 @@ Module.register('MMM-TelegramCommands', {
   },
   // Callback for /myreboot Telegram command
   command_myreboot: function(command, handler) {
-    var exec = "/usr/local/bin/reboot"
+    var exec = "/usr/local/bin/myreboot"
     handler.reply("TEXT", "Executing command: " + exec)
     var sessionId = Date.now() + "_" + this.commonSession.size
     if (exec) {
@@ -165,7 +165,7 @@ Module.register('MMM-TelegramCommands', {
   },
   // Callback for /myshutdown Telegram command
   command_myshutdown: function(command, handler) {
-    var exec = "/usr/local/bin/shutdown"
+    var exec = "/usr/local/bin/myshutdown"
     handler.reply("TEXT", "Executing command: " + exec)
     var sessionId = Date.now() + "_" + this.commonSession.size
     if (exec) {

@@ -153,7 +153,7 @@ for an in-depth review of all the various commands that can be issued using the
 `/mirror` command.
 
 The Telegram commands `/myreboot` and `/myshutdown` execute the commands,
-respectively, `/usr/local/bin/reboot` and `/usr/local/bin/shutdown`. These
+respectively, `/usr/local/bin/myreboot` and `/usr/local/bin/myshutdown`. These
 custom reboot and shutdown commands can be used to perform actions prior
 to rebooting or shutting down the system on which MagicMirror is installed.
 
